@@ -1,7 +1,14 @@
+export const Type = {
+  ADD_TODO: "ADD_TODO",
+  TOGGLE_TODO: "TOGGLE_TODO",
+  REMOVE_TODO: "REMOVE_TODO"
+}
+
 export function addTodo(text){
   return {
-    type: "ADD_TODO",
+    type: Type.ADD_TODO,
     payload: {
+      id: Math.random(),
       text
     }
   };
@@ -9,7 +16,7 @@ export function addTodo(text){
 
 export function toggleTodo(id){
   return {
-    type: "TOGGLE_TODO",
+    type: Type.TOGGLE_TODO,
     payload: {
       id
     }
@@ -18,7 +25,7 @@ export function toggleTodo(id){
 
 export function removeTodo(id){
   return {
-    type: "REMOVE_TODO",
+    type: Type.REMOVE_TODO,
     payload: {
       id
     }
