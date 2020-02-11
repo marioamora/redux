@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, toggleTodo, removeTodo } from './store/actions/todos'
+import { Creators as TodoActions } from './store/ducks/todos'
 
 export const TodoList = () => {
 
-  const [ input, setInput ] = useState("")
+  const [ input, setInput ] = useState("");
   const todos = useSelector(state => state.todos);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const { addTodo, toggleTodo, removeTodo } = TodoActions;
 
   const handleSubmit = e => {
     e.preventDefault();
